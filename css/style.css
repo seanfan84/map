@@ -1,0 +1,25 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	width: 75%;
+    height: 400px;
+    float: right;
+    background-color: grey;
+}
+
+#list {
+	width: 19%;
+	height:100%;
+	float: left;
+	background: blue;
+	padding: 10px;
+}
+
+.inputbar {
+	width: 100%;
+}
+

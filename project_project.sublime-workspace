@@ -1,0 +1,1160 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ob",
+				"onabort\t(?)"
+			],
+			[
+				"con",
+				"console\t{}"
+			],
+			[
+				"for",
+				"ForeignKey\tclass"
+			],
+			[
+				"wik",
+				"wikiTimeout"
+			],
+			[
+				"her",
+				"href"
+			],
+			[
+				"exce",
+				"Exception\tclass"
+			],
+			[
+				"exc",
+				"except"
+			],
+			[
+				"author",
+				"authorized"
+			],
+			[
+				"autho",
+				"authorized"
+			],
+			[
+				"owner",
+				"owner_id"
+			],
+			[
+				"fals",
+				"False"
+			],
+			[
+				"sess",
+				"login_session"
+			],
+			[
+				"own",
+				"owner_id"
+			],
+			[
+				"product",
+				"product_name"
+			],
+			[
+				"auth",
+				"authorization\tfunction"
+			],
+			[
+				"login",
+				"login_session\tinstance"
+			],
+			[
+				"getuser",
+				"getUserByEmail\tfunction"
+			],
+			[
+				"url",
+				"url_for\tfunction"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"va",
+				"valid_pw\tfunction"
+			],
+			[
+				"help",
+				"helper\tmodule"
+			],
+			[
+				"getus",
+				"getUserByEmail\tfunction"
+			],
+			[
+				"it",
+				"iteritems\tfunction"
+			],
+			[
+				"make",
+				"make_pw_hash\tfunction"
+			],
+			[
+				"sign",
+				"signup\tfunction"
+			],
+			[
+				"have",
+				"have_error\tstatement"
+			],
+			[
+				"false",
+				"False\tinstance"
+			],
+			[
+				"valid",
+				"valid_email\tfunction"
+			],
+			[
+				"hel",
+				"helper\tmodule"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"get",
+				"getProductByName\tfunction"
+			],
+			[
+				"showcat",
+				"showProductsByCategoryName\tfunction"
+			],
+			[
+				"getcate",
+				"getCategoryByName\tfunction"
+			],
+			[
+				"cate",
+				"category_name\tparam"
+			],
+			[
+				"name",
+				"new_name\tparam"
+			],
+			[
+				"ur",
+				"url_for"
+			],
+			[
+				"getp",
+				"getProductByName\tfunction"
+			],
+			[
+				"load",
+				"loadCategories\tfunction"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"categor",
+				"category_id\tparam"
+			],
+			[
+				"categ",
+				"category\tstatement"
+			],
+			[
+				"catego",
+				"category_id\tparam"
+			],
+			[
+				"one",
+				"one_or_none"
+			],
+			[
+				"category",
+				"category_name\tparam"
+			],
+			[
+				"uni",
+				"UniqueConstraint\tclass"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"heig",
+				"height"
+			],
+			[
+				"mak",
+				"make_response\tfunction"
+			],
+			[
+				"met",
+				"meta\tTag"
+			],
+			[
+				"str",
+				"String\tclass"
+			],
+			[
+				"bas",
+				"Base\tstatement"
+			],
+			[
+				"data",
+				"database_setup\tmodule"
+			],
+			[
+				"dat",
+				"database_setup\tmodule"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"ca",
+				"categories\tstatement"
+			],
+			[
+				"car",
+				"carports\tstatement"
+			],
+			[
+				"c",
+				"category\tstatement"
+			],
+			[
+				"cata",
+				"catalog"
+			],
+			[
+				"show",
+				"showProducts\tfunction"
+			],
+			[
+				"catalog",
+				"catalog_id"
+			],
+			[
+				"fe",
+				"fetchall"
+			],
+			[
+				"fet",
+				"fetchall"
+			],
+			[
+				"wr",
+				"wraps\tfunction"
+			],
+			[
+				"co",
+				"connection"
+			],
+			[
+				"ar",
+				"Args"
+			],
+			[
+				"ex",
+				"executeSQL\tfunction"
+			],
+			[
+				"pl",
+				"players"
+			],
+			[
+				"if",
+				"IF"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"flas",
+				"flash\tfunction"
+			],
+			[
+				"dup",
+				"dumps\tfunction"
+			],
+			[
+				"face",
+				"facebook_id\tstatement"
+			],
+			[
+				"dum",
+				"dumps\tfunction"
+			],
+			[
+				"log",
+				"login_session"
+			],
+			[
+				"rou",
+				"route"
+			],
+			[
+				"http",
+				"Http"
+			],
+			[
+				"htt",
+				"httplib2\tmodule"
+			],
+			[
+				"acce",
+				"access_token\tstatement"
+			],
+			[
+				"res",
+				"restaurants\tstatement"
+			],
+			[
+				"u",
+				"user_id\tstatement"
+			],
+			[
+				"create",
+				"createUser\tfunction"
+			],
+			[
+				"us",
+				"User\tclass"
+			],
+			[
+				"in",
+				"Integer"
+			],
+			[
+				"req",
+				"requireLogin\tfunction"
+			],
+			[
+				"crea",
+				"credentials"
+			],
+			[
+				"lo",
+				"loads\tfunction"
+			],
+			[
+				"cl",
+				"CLIENT_ID"
+			],
+			[
+				"access",
+				"access_token"
+			],
+			[
+				"cred",
+				"credentials"
+			],
+			[
+				"du",
+				"dumps\tfunction"
+			],
+			[
+				"menuitm",
+				"menuitems"
+			],
+			[
+				"menu",
+				"menu_id\tparam"
+			],
+			[
+				"delete",
+				"deleteMenuItem\tfunction"
+			],
+			[
+				"rest",
+				"restaurant_id"
+			],
+			[
+				"new",
+				"newMenuItem\tfunction"
+			],
+			[
+				"sho",
+				"showMenu\tfunction"
+			],
+			[
+				"ge",
+				"getResaurantById\tfunction"
+			],
+			[
+				"edit",
+				"editRestaurant\tfunction"
+			],
+			[
+				"newr",
+				"newrest\tstatement"
+			],
+			[
+				"base",
+				"Base\tinstance"
+			],
+			[
+				"session",
+				"Session\tstatement"
+			],
+			[
+				"p",
+				"price"
+			],
+			[
+				"resu",
+				"restaurants\tstatement"
+			],
+			[
+				"render_",
+				"render_template\tfunction"
+			],
+			[
+				"de",
+				"debug\tstatement"
+			],
+			[
+				"js",
+				"jsonify\tstatement"
+			],
+			[
+				"s",
+				"serialize"
+			],
+			[
+				"men",
+				"MenuItem\tclass"
+			],
+			[
+				"g",
+				"getMenuItemByID\tfunction"
+			],
+			[
+				"ed",
+				"editMenuItem"
+			],
+			[
+				"metho",
+				"method"
+			],
+			[
+				"h",
+				"html\thtml"
+			],
+			[
+				"resta",
+				"Restaurant\tclass"
+			],
+			[
+				"l",
+				"listMenu\tfunction"
+			],
+			[
+				"send",
+				"send_header\tfunction"
+			],
+			[
+				"sessi",
+				"sessionmaker"
+			],
+			[
+				"mess",
+				"messagecontent"
+			],
+			[
+				"Base",
+				"BaseHTTPRequestHandler"
+			],
+			[
+				"serv",
+				"server_address"
+			],
+			[
+				"ser",
+				"server_address"
+			],
+			[
+				"Htt",
+				"HTTPServer"
+			],
+			[
+				"she",
+				"shelter_id"
+			],
+			[
+				"pupp",
+				"puppies"
+			],
+			[
+				"sh",
+				"Shelter"
+			],
+			[
+				"date",
+				"dateOfBirth"
+			],
+			[
+				"Resaur",
+				"Restaurent"
+			],
+			[
+				"st",
+				"String"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "js/app.js",
+			"settings":
+			{
+				"buffer_size": 406,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "homepage.html",
+			"settings":
+			{
+				"buffer_size": 915,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/style.css",
+			"settings":
+			{
+				"buffer_size": 142,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 503.0,
+		"last_filter": "ind",
+		"selected_items":
+		[
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Enable Package"
+			],
+			[
+				"ind\t\t",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"package con",
+				"Package Control: Enable Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"instal\t",
+				"Package Control: Install Package"
+			],
+			[
+				"reindi\t",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"package control install\t",
+				"Package Control: Install Package"
+			],
+			[
+				"package control enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"package control en",
+				"Package Control: Enable Package"
+			],
+			[
+				"package control dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"package control in",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Install Package Control"
+			],
+			[
+				"ind\t",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 168.0,
+		"history":
+		[
+			"1+1",
+			"import socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 55182))",
+			"registerPlayer('123')",
+			"python tournament.py",
+			"tournament.py",
+			"print(\"1\")",
+			"j"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/css",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js"
+	],
+	"file_history":
+	[
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/L07E09 MAP/map.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/homepage.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/app.js",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/L05E28 Adding More Cats/catclickerKnockOut.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/L05E28 Adding More Cats/catclickerpreimiumPro.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/L04E18 ud989-school-attendance-master/js/app.js",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/project_project.sublime-project",
+		"/C/Users/seanf/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/seanf/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/Users/seanf/AppData/Roaming/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/knockout-3.4.2.debug.js",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/knockout-3.4.2.js",
+		"/C/Users/seanf/OneDrive/Full_Stack/01ProjectMovie/fresh_tomatoes.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/project06.sublime-project",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/3ud989-retain/js/retain.js",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/1Udacity_AJAX_INIT/minicourse-ajax-project/index.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/2Cat Clicker/index.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Udacity_AJAX_INIT/minicourse-ajax-project/js/script.js",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Cat Clicker/index.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Udacity_AJAX_INIT/minicourse-ajax-project/index.html",
+		"/C/Users/seanf/Desktop/Udacity_AJAX_INIT/minicourse-ajax-project/index.html",
+		"/C/Users/seanf/Desktop/Udacity_AJAX_INIT/minicourse-ajax-project/js/script.js",
+		"/C/Users/seanf/Desktop/Udacity_AJAX_INIT/minicourse-ajax-project/.gitignore",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/catalog/g_client_secrets.json",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/catalog/database_setup.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/catalog/crud.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/catalog/application.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/catalog/helper.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/catalog/fb_client_secrets.json",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/webserverX.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/signup.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/helper.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/productEdit.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/database_setup.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/categoryEdit.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/productlist.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/project.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/crud.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/productDetail.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/base.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/productadd.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/signin3rdParty.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/login.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/baseClean.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/static/style.css",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/static/bootstrap.css",
+		"/C/Users/seanf/OneDrive/Full_Stack/02Portfolio/bootstrap/css/bootstrap.css",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/productDelete.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/categoryDelete.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/falsedata.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/templates/publicrestaurants.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/templates/header.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/templates/newRestaurant.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/templates/main.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/templates/login.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/Oauth2.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/google.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/g_client_secrets.json",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/templates/login2.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/client_secrets.json",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/login2.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/fblogin.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/ALPHAFIT/Data/tblSupplier.txt",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/ALPHAFIT/database_setup.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/ALPHAFIT/commands.txt",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/ALPHAFIT/Data/txtCountry.txt",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/ALPHAFIT/Data/txtCountry.csv",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/ALPHAFIT/finalProject.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/03Backend/INTRO TO BACKEND - Problem Set/engineapp/main.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/categoryAdd.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/webserver.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/templates/sidebar.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/PuppyShelters/puppies.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/PuppyShelters/puppytest.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/finalProject.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/webserver_flask.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/base.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/tournament/tournament.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/finalProject.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/README.md",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/database_setup.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/tournament/tournament.pyc",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/tournament/tournament.sql",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/crud.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/03Backend/INTRO TO BACKEND - Problem Set/engineapp/templates/bloglist.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/03Backend/INTRO TO BACKEND - Problem Set/engineapp/css/bootstrap.css",
+		"/C/Users/seanf/OneDrive/Full_Stack/03Backend/INTRO TO BACKEND - Problem Set/engineapp/css/bootstrap.min.css",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/static/style.css",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FSNDP4/productedit.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/finalProject.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/webserver.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/pg_config.sh",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/Vagrantfile",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/forum/forum.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/forum/forumdb.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/04SQL_Virtual_Machine/vagSurface/tournament/tournament_test.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/fb_client_secrets.json",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/templates/restaurants.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/templates/menu.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/database_setup.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/lotsofmenusWithUser.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/pg_config.sh",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Vagrantfile",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/static/style.css",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/templates/restaurants.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Oauth/oauth/README.md",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/templates/newRestaurant.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/templates/newMenuItem.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/templates/menu.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/templates/editRestaurant.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/templates/editMenuItem.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/templates/deleteRestaurant.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/templates/deleteMenuItem.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/database_setup.pyc",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/CRUD.py",
+		"/C/Users/seanf/Dropbox/encryptionkey.pfx",
+		"/C/Users/seanf/Dropbox/IMG_5293.mov",
+		"/C/Users/seanf/Dropbox/Rrecipt_567453557292196525.pdf",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/lotsofmenus.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/deletemenuitem.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/restaurant.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/restaurant.pyc",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/database_setup.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/editmenuitem.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/menu.html",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/webserver2.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/lotsofmenus.py",
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/python_server.py"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 138.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"uluru",
+			">\n",
+			"port",
+			"authorization2",
+			"catelog",
+			"showhome",
+			"\"Successfully disconnected\"",
+			"checkuser",
+			"showhome",
+			"checkuser",
+			"authorization",
+			"author",
+			"authorization",
+			"author",
+			"login()",
+			"category_name'",
+			"category_name",
+			"showproducts",
+			"login",
+			"showhome",
+			"route",
+			"showhome",
+			"categories",
+			"generalData",
+			"generaldata",
+			"login",
+			"checkuser",
+			"tender_",
+			"username",
+			"login",
+			"showlog",
+			"error[",
+			"crud.showProducts",
+			"home",
+			"show",
+			"home",
+			"showerror",
+			"error",
+			"onchange",
+			"product",
+			"loadCategory",
+			"TODO",
+			"products",
+			"price",
+			"cost",
+			"price",
+			"one_or",
+			"client_id",
+			"secret",
+			"client_sec",
+			"oauth2",
+			"signincall",
+			"login",
+			"statuschangecallback",
+			"(response)",
+			"response",
+			"token",
+			"login.html",
+			"getLoginStatus",
+			"statusChangeCallback",
+			"getloginstatus",
+			"test",
+			"access",
+			"facebook",
+			"if login_session['provider",
+			"if",
+			"scope",
+			"facebook",
+			"me\\",
+			"me/",
+			"me",
+			"checking",
+			"fbdisconnect",
+			"state",
+			"login",
+			"transaction",
+			"\t",
+			"036",
+			"\"",
+			"~",
+			",",
+			", ",
+			"|",
+			",",
+			"，",
+			"sendTokenTo",
+			"code",
+			"codecs",
+			"hash",
+			"render(",
+			"render",
+			"150",
+			"(\"/\")\n",
+			"render(",
+			"render_template",
+			"showCatalog",
+			"catalog",
+			"Catalog",
+			"catalog",
+			"rest",
+			"restaurant",
+			"catelog",
+			"Restaurant",
+			"restaurant",
+			"Restaurants",
+			"restaurants",
+			"Menu",
+			"menu_id",
+			"restaurant_id",
+			"values",
+			"into",
+			"count",
+			"insert ",
+			"select ",
+			"delete ",
+			"from",
+			"len",
+			"END IF;\n",
+			"__name__",
+			"main",
+			"\t",
+			"\\t",
+			"restaurant",
+			"redirect",
+			"if '",
+			"facebook_id",
+			"10.0.2.2",
+			"100.2.2"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"catalog",
+			"params[",
+			"loadCategories",
+			"    ",
+			"",
+			", ",
+			"|",
+			"~",
+			",",
+			"|",
+			"100",
+			"category",
+			"Category",
+			"category",
+			"catalog",
+			"Catalog",
+			"catalog",
+			"Catalog",
+			"catalog",
+			"Product",
+			"product_id",
+			"catalog_id",
+			"VALUES",
+			"INTO",
+			"COUNT",
+			"INSERT ",
+			"SELECT ",
+			"DELETE ",
+			"FROM",
+			"    ",
+			"return ",
+			": '",
+			" : '   ",
+			"    ",
+			"= ",
+			"=",
+			"    ",
+			"images"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 406,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								287,
+								287
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "homepage.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 915,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								689,
+								689
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								112,
+								112
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 148.0
+	},
+	"pinned_build_system": "",
+	"project": "project_project.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 393.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
