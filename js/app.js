@@ -86,7 +86,7 @@ var mapViewModel = function() {
 	}
 
 	self.filter.subscribe(function(newValue) {
-	    alert("The person's new name is " + newValue);
+	    // alert("The person's new name is " + newValue);
 	    self.markers().forEach(function(marker){
 	    	// if filter is null, show all markers
 	    	if(newValue === null){
