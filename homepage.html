@@ -10,12 +10,12 @@
 	<div id="list">
 	<h3>Sean Favourate</h3>
 	<input id="search" class="inputbar" data-bind="" placeholder="search">
-	<input id="filter" class="inputbar" data-bind="textInput:filter" type="" name="" placeholder="filter">
+	<input id="filter" class="inputbar" data-bind="{textInput:filter}" type="" name="" placeholder="filter">
 	<div style="height:1em" data-bind="text:filter"> </div>
-	<div data-bind="foreach:places">
-		<div class="label" data-bind="text:$index()+1+'.' + name"></div>
-<!-- 		<div class="item" data-bind="text:name"></div>
- -->	</div>
+		<div data-bind="foreach:places">
+			<div class="label" data-bind="text:$index()+1+'.' + name">
+			</div>
+	</div>
 	</div>
 
 
@@ -35,57 +35,15 @@
 			var input = document.getElementById("search")
   			var autocomplete = new google.maps.places.Autocomplete(input);
   			autocomplete.bindTo("bounds",map)
-
 			 var marker = new google.maps.Marker({
 				 position: home,
 				 map: map,
 				 label: "H"
 			 });
-			 makeMarkers(map);
-			 showAll();
-		}
 
-		function makeMarkers(map){
-			for (var i = 0; i < data.length; i++) {
-				// console.log(data[i].name)
-				var marker = new google.maps.Marker({
-					position:ViewModel.places()[i].location,
-					title:data[i].name,
-					label:(i+1).toString(),
-					map:map
-				})
-				console.log(marker.position.toString())
-				markers.push(marker)
-
-				var info = new google.maps.InfoWindow({
-					    content: "contentString" + (i + 1)
-					});
-				infos.push(info)
-				// marker.addListener('click', (function(info,marker){
-				// 	return function(){
-				// 		marker.setAnimation(google.maps.Animation.BOUNCE);
-				// 		info.open(map,marker);
-				// 		console.log(info.content.toString());
-				// 	}
-				// })(info,marker));
-
-				marker.addListener('click',(function(marker,info){
-					return function(){
-						// marker.setAnimation(1);
-						// info.open(map,marker)
-				// 		// console.log(marker2)
-						ViewModel.selectMarker(marker,info);
-					}
-				})(marker,info));
-			}
-		}
-		function showAll(){
-			if (markers.length>0){
-				console.log("listing")
-			}
-			else{
-				console.log("no markers")
-			}
+			 // ViewModel.markers().forEach(function(marker){
+			 // 	marker.setMap(map)
+			 // });
 		}
 	</script>
 </body>

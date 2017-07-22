@@ -57,15 +57,56 @@ var data = [
 		"lng" : 153.4172059
 	}
 }
-
 ]
-
 
 var mapViewModel = function() {
 	var self = this;
 	self.places = ko.observableArray(data);
-	self.filter = ko.observable("filter");
-	self.current = null
+	self.filter = ko.observable();
+
+	// On filter value change/update
+	self.markers = function(){
+		var markersTemp = [];
+		for (var i = 0; i < data.length; i++) {
+			var marker = new google.maps.Marker({
+				position:data[i].location,
+				title:data[i].name,
+				label:(i+1).toString(),
+			})
+			marker.addListener('click',(function(marker){
+				return function(){
+					console.log(marker.title + " clicked")
+					// call function that load infowindow
+				}
+			})(marker)
+			)
+			markersTemp.push(marker);
+		}
+		return markersTemp;
+	}
+
+	self.filter.subscribe(function(newValue) {
+	    alert("The person's new name is " + newValue);
+	    self.markers().forEach(function(marker){
+	    	// if filter is null, show all markers
+	    	if(newValue === null){
+	    		marker.setMap(map)
+	    	}
+
+	    	else{
+	    		if(marker.title.toLowerCase().includes(newValue.toLowerCase())){
+	    			console.log("setmap " + marker.title)
+	    			marker.setMap(map)
+	    		}
+	    		else{
+	    			console.log("setnull " + marker.title)
+	    			marker.setMap(null);
+	    			console.log(marker.getMap())
+	    		}				
+	    	}
+	    })
+	});
+
 
 	self.previousMarker = null;
 	self.previousInfo = null;
@@ -74,15 +115,13 @@ var mapViewModel = function() {
 			console.log("previousMarker")
 			self.previousMarker.setAnimation(null);
 			self.previousInfo.close();
-
 		}
 		console.log("Marker")
 		marker.setAnimation(google.maps.Animation.BOUNCE)
 		info.open(map,marker)
-			self.previousMarker = marker;
-			self.previousInfo = info;
+		self.previousMarker = marker;
+		self.previousInfo = info;
 	}
-
 }
 
 var ViewModel = new mapViewModel()
