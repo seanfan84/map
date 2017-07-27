@@ -18,33 +18,46 @@
 	</div>
 	</div>
 
-
+<button onclick="clearMap()">Clear</button>
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB7SJJaAkmrUYuGUurw8zSPB1lvEKG43cE&callback=initMap" async defer></script>
-<script src='js/app.js'></script>
+<script src='js/app.js' async defer></script>
 
-	<script async defer>
-		var map = null;
-		var markers = [];
-		var infos = [];
-		function initMap() {
-			map = new google.maps.Map(document.getElementById('map'), {
-				 zoom: 12,
-				 center: home,
-				 scrollwheel: false
-			 });
-			var input = document.getElementById("search")
-  			var autocomplete = new google.maps.places.Autocomplete(input);
-  			autocomplete.bindTo("bounds",map)
-			 var marker = new google.maps.Marker({
-				 position: home,
-				 map: map,
-				 label: "H"
-			 });
+<script async defer>
+	var map = null;
+	var markers = [];
+	var infos = [];
+	function initMap() {
+		map = new google.maps.Map(document.getElementById('map'), {
+			 zoom: 12,
+			 center: home,
+			 scrollwheel: false
+		 });
+		var input = document.getElementById("search")
+			var autocomplete = new google.maps.places.Autocomplete(input);
+			autocomplete.bindTo("bounds",map)
+		 var marker = new google.maps.Marker({
+			 position: home,
+			 map: map,
+			 label: "H"
+		 });
 
-			 // ViewModel.markers().forEach(function(marker){
-			 // 	marker.setMap(map)
-			 // });
-		}
-	</script>
+		 ViewModel.markers().forEach(function(marker){
+		 	marker.setMap(map)
+		 	// PROBLEM setMap(null) Works HERE if get uncommented
+		 	// marker.setMap(null)
+		 });
+	}
+	var x=1;
+
+	function clearMap(){
+		console.log("clearMap")
+		ViewModel.markers().forEach(function(marker){
+	    	// PROBLEM - setMap(null) not woking
+			marker.setMap(null)
+			marker.setVisible(false)
+		})
+	}
+
+</script>
 </body>
 </html>

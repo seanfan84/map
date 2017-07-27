@@ -88,18 +88,21 @@ var mapViewModel = function() {
 	self.filter.subscribe(function(newValue) {
 	    // alert("The person's new name is " + newValue);
 	    self.markers().forEach(function(marker){
-	    	// if filter is null, show all markers
+	    	// if filter is null, no filter is applied show all markers
 	    	if(newValue === null){
 	    		marker.setMap(map)
 	    	}
-
 	    	else{
+	    		// Filter implementation Set qualified markers visible
 	    		if(marker.title.toLowerCase().includes(newValue.toLowerCase())){
 	    			console.log("setmap " + marker.title)
 	    			marker.setMap(map)
 	    		}
+	    		// Filter implementation Set unqualified markers invisible
 	    		else{
+	    			// PROBLEM - setMap(null) not woking
 	    			console.log("setnull " + marker.title)
+	    			marker.setVisible(false)
 	    			marker.setMap(null);
 	    			console.log(marker.getMap())
 	    		}				
