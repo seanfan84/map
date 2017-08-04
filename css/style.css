@@ -23,3 +23,22 @@ html, body {
 	width: 100%;
 }
 
+.hide {
+	display: none;
+}
+.show {
+	display: show;
+}
+
+.mouseover{
+	background: red;
+}
+
+.mouseclick{
+	background: red;
+	color: white;
+}
+
+.mouseup{
+	color: black;
+}
