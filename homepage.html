@@ -17,22 +17,31 @@
 			</div>
 		</div>
 	</div>
+	<div id="pano" class="pano"></div>
 
-	<button onclick="clearMap()">Clear</button>
-	<button onclick="showMap()">Show</button>
+
 	<script src='js/app.js' async defer></script>
-
 	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB7SJJaAkmrUYuGUurw8zSPB1lvEKG43cE&callback=initMap" async defer></script>
-
 	<script async defer>
 		var map = null;
 		var infos = [];
+
+		// Error Handling: Download Google Map Library
+		var checkGoogleLibrary = setTimeout(function(){
+			if(!window.google)window.alert("Unable to connect to google, check network")
+		},5000)
+		// Error Handling: lost internet
+		// Not required once library is downloaded
+
 		function initMap() {
+
 			ViewModel.makeMarkers()
 			map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 12,
 				center: home,
-				scrollwheel: false
+				scrollwheel: false,
+				streetViewControl:false,
+				mapTypeControl:false
 			});
 			var input = document.getElementById("search")
 			var autocomplete = new google.maps.places.Autocomplete(input);
@@ -47,21 +56,6 @@
 				marker.setMap(map)
 			});
 		}
-
-		// function clearMap(){
-		// 	console.log("clearMap")
-		// 	ViewModel.markers.forEach(function(marker){
-		// 		marker.setMap(null)
-		// 	})
-		// }
-
-		// function showMap(){
-		// 	console.log("showMap")
-		// 	ViewModel.markers.forEach(function(marker){
-		// 		marker.setMap(map)
-		// 	})
-		// }
-
 		function clickLabel(obj){
 			// confirm(obj.id)
 			var marker = ViewModel.markers[obj.id]
@@ -85,5 +79,6 @@
 
 
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

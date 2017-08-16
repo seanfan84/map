@@ -19,6 +19,11 @@ html, body {
 	padding: 10px;
 }
 
+.pano {
+	width: 400px;
+	height:300px;
+}
+
 .inputbar {
 	width: 100%;
 }

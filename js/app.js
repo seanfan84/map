@@ -7,8 +7,7 @@ var data = [
 	"location" : {
 		"lat" : -27.9386457,
 		"lng" : 153.4067372
-	},
-	visible:true
+	}
 },
 {
 	name:"Heran Building Group",
@@ -16,8 +15,7 @@ var data = [
 	"location" : {
 		"lat" : -27.966909,
 		"lng" : 153.415969
-	},
-	visible:true
+	}
 },
 {
 	name:"The Grand Apartments Gold Coast",
@@ -25,8 +23,7 @@ var data = [
 	"location" : {
 		"lat" : -27.942547,
 		"lng" : 153.4093
-	},
-	visible:true
+	}
 },
 {
 	name:"Cafe Gold Coast",
@@ -34,8 +31,7 @@ var data = [
 	"location" : {
 		"lat" : -27.9446507,
 		"lng" : 153.4098823
-	},
-	visible:true
+	}
 },
 {
 	name:"Sea World",
@@ -43,17 +39,15 @@ var data = [
 	"location" : {
 		"lat" : -27.9532454,
 		"lng" : 153.4259149	
-	},
-	visible:true
+	}
 },
 {
-	name:"Movie World",
+	name:"Warner Bros. Movie World",
 	address:"zzzzz",
 	"location" : {
-		lat:-27.9056043,
-		lng:153.3207476
-	},
-	visible:true
+		lat:-27.9109247,
+		lng:153.3108152
+	}
 },
 {
 	name:"Broadwater Parkland",
@@ -61,8 +55,7 @@ var data = [
 	"location" : {
 		"lat" : -27.965906,
 		"lng" : 153.4172059
-	},
-	visible:true
+	}
 }
 ]
 
@@ -74,15 +67,13 @@ var Place = function(data){
 
 var mapViewModel = function() {
 	var self = this;
+	self.filter = ko.observable();
 	self.places = ko.observableArray();
 	data.forEach(function(entry){
-			var place = new Place(entry)
-			self.places.push(place);
-			console.log(place)
-		}
+		var place = new Place(entry)
+		self.places.push(place);
+	}
 	)
-
-	self.filter = ko.observable();
 
 
 	// On filter value change/update
@@ -111,20 +102,20 @@ var mapViewModel = function() {
 	    // for (var i = 0; i < this.places().length; i++) {
 	    // 	var place = this.places()[i].
 	    // }
-	    // self.places().forEach(function(place){
-	    // 	if(newValue === null){
-	    // 		place.visible = true;
-	    // 	}
-	    // 	else{
-	    // 		if(place.name.toLowerCase().includes(newValue.toLowerCase())){
-	    // 			place.visible = true;
-	    // 			console.log("show " + place.name)
-	    // 		}
-	    // 		else{
-	    // 			place.visible = false;
-	    // 		}
-	    // 	}
-	    // })
+	    self.places().forEach(function(place){
+	    	if(newValue === null){
+	    		place.visible(true);
+	    	}
+	    	else{
+	    		if(place.name.toLowerCase().includes(newValue.toLowerCase())){
+	    			place.visible(true);
+	    			console.log("show " + place.name)
+	    		}
+	    		else{
+	    			place.visible(false);
+	    		}
+	    	}
+	    })
 	});
 
 	// Make Marker List
@@ -149,7 +140,6 @@ var mapViewModel = function() {
 
 	// Select Markers
 	var previousMarker = null;
-	var previousInfo = null;
 	self.selectMarker = function(marker){
 		if(previousMarker){
 			console.log("previousMarker")
@@ -160,17 +150,27 @@ var mapViewModel = function() {
 		marker.setAnimation(google.maps.Animation.BOUNCE)
 		previousMarker = marker;
 	}
+
+	var previousInfo = null;
 	self.selectInfo = function(marker){
 		if(previousInfo){
 			previousInfo.close()
 		}
-		// Making INFO on the fly
+		var info = new google.maps.InfoWindow({
+			content:"<div id='pano2' class='pano'></div>"
+		})
 
-		// info.open(map,marker)
-		// previousInfo = info;
+		thirdParty(marker,function(result){
+			previousInfo = info;
+			info.setContent(info.getContent()+result)
+			info.open(map,marker)
+			setTimeout(function(){
+				streetView(marker,"pano2")
+			}, 200)
 
+
+		})
 	}
-
 	// List Hover
 }
 
@@ -178,3 +178,135 @@ var ViewModel = new mapViewModel()
 // ViewModel.current.subscribe()
 ko.applyBindings(ViewModel);
 
+
+
+function streetView(marker,elementId){
+	var output;
+	var theading;
+	var tlocation = marker.position
+	var timeout = setTimeout(function() {
+		output = "timeOutMessage";
+	}, 3000);
+	var el = document.getElementById(elementId)
+	console.log(el)
+	var svs = new google.maps.StreetViewService()
+	var panorama = new google.maps.StreetViewPanorama(
+		el,
+		{
+			disableDefaultUI:true,
+			panControl:true,
+			scrollwheel:false
+		});
+	svs.getPanorama(
+		{location:tlocation,
+			preference:"best",
+			radius:50},
+			function(data,status){
+				console.log(status)
+				if(status==="OK"){
+					panorama.setPano(data.location.pano);
+					console.log(data.location)
+					theading = google.maps.geometry.spherical.computeHeading(
+						data.location.latLng, 
+						tlocation
+						)
+					panorama.setPov({
+						heading: theading,
+						pitch: 0
+					});
+					panorama.setVisible(true);					
+				}
+				else{
+					console.log("streetView Data not found")
+				}
+			}
+			)
+}
+
+
+
+
+
+var thirdParty = function(marker,callback){
+	var timeOutMessage = "Faild to get resource"
+	function wiki(marker){
+		var output
+		var timeout = setTimeout(function() {
+			output = timeOutMessage;
+		}, 3000);
+		var wiki_url = "https://en.wikipedia.org/w/api.php"
+		$.ajax({
+			url: wiki_url,
+			data: {
+				"action": "opensearch",
+				"search": marker.title
+			},
+			dataType: 'jsonp',
+			type: 'GET',
+			headers: {
+				'Api-User-Agent': 'Example/1.0'
+			},
+			success: function(data) {
+	            // do something with data
+	            // console.log(data)
+	            var items = []
+	            for (i = 0; i < data[1].length; i++) {
+	                // console.log(data[1][i])
+	                // console.log(data[2][i])
+	                // console.log(data[3][i])
+	                items.push("<li class='article'>" +
+	                	"<a href='" + data[3][i] + "'>" +
+	                	data[1][i] +
+	                	"</a>" + "<p>" + data[2][i] + "</p>" +
+	                	"</li>")
+	            }
+	            clearTimeout(timeout);
+	            // console.log("WIKI")
+	            var output = items.join("");
+	            console.log(output);
+	            return output;
+	        }
+	    });
+	}
+	function fourSquare(marker){
+		var output;
+		var timeout = setTimeout(function() {
+			output = timeOutMessage;
+		}, 3000);
+
+		$.ajax({
+			url:placeholder,
+			dataType:"JSON",
+			type:"GET",
+			success:function(data){(
+				clearTimeout(timeout)
+				)}
+		})
+
+		output += "foursquare"
+		return output
+	}
+
+	function nytimes(marker){
+		var output;
+		var timeout = setTimeout(function() {
+			output = "Failed to get resources";
+		}, 3000);
+
+		$.ajax({
+			url:placeholder,
+			dataType:"JSON",
+			type:"GET",
+			success:function(data){(
+				clearTimeout(timeout)
+				)}
+		});
+		output += "streetView"
+		return output		
+	}
+
+	result = wiki(marker)
+	// result += fourSquare(marker)
+	// result += nytimes(marker)
+	callback(result)
+}
