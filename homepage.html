@@ -9,48 +9,63 @@
 	<div id="map">MAP</div>
 	<div id="list">
 		<h3>Sean Favourate</h3>
-		<input id="search" class="inputbar" data-bind="" placeholder="search">
-		<input id="filter" class="inputbar" data-bind="{textInput:filter}" type="" name="" placeholder="filter">
-		<div style="height:1em" data-bind="text:filter"> </div>
+<!-- Only Place Holder: This not implemented -->
+<!-- 		<input id="search" class="inputbar" data-bind="" placeholder="search"> -->
+
+		<input id="filter" class="inputbar" data-bind="{textInput:filter}" type="" name="" placeholder="Search" oninput="showDropdown()" onblur="">
+		<div class="dropdown">
+			  <div id="myDropdown" class="dropdown-content" data-bind="foreach:places">
+
+			    <a href="#" data-bind="text:name,visible:visible" onclick="setFilter(this.innerHTML)"></a>
+
+			  </div>
+		</div>
+<!-- 		<div style="height:1em" data-bind="text:'Test:'+ filter()"> </div>
+ -->		
 		<div data-bind="foreach:places">
 			<div id="" class="label" data-bind="text:$index()+1+'.' + name, attr: {id:$index()},visible:visible" onload="console.log(1)" onclick = "clickLabel(this)" onmouseover="overLabel(this)" onmouseleave="leaveLable(this)">
 			</div>
 		</div>
 	</div>
 	<div id="pano" class="pano"></div>
-
-
 	<script src='js/app.js' async defer></script>
 	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB7SJJaAkmrUYuGUurw8zSPB1lvEKG43cE&callback=initMap" async defer></script>
 	<script async defer>
 		var map = null;
+		var center = null, zoom = null;
 		var infos = [];
 
 		// Error Handling: Download Google Map Library
 		var checkGoogleLibrary = setTimeout(function(){
 			if(!window.google)window.alert("Unable to connect to google, check network")
 		},5000)
-		// Error Handling: lost internet
-		// Not required once library is downloaded
 
 		function initMap() {
 
-			ViewModel.makeMarkers()
 			map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 12,
-				center: home,
+				// zoom: 12,
+				// center: home,
 				scrollwheel: false,
 				streetViewControl:false,
 				mapTypeControl:false
 			});
-			var input = document.getElementById("search")
-			var autocomplete = new google.maps.places.Autocomplete(input);
-			autocomplete.bindTo("bounds",map)
-			var marker = new google.maps.Marker({
-				position: home,
-				map: map,
-				label: "H"
-			});
+
+			ViewModel.makeMarkers(function(bounds){
+				map.fitBounds(bounds,50)
+			})
+
+			clearTimeout(checkGoogleLibrary)
+
+			setTimeout(function(){
+				center = map.getCenter()
+				zoom = map.getZoom()
+				console.log("zoom" + zoom + "center" + center)
+			},800)
+			
+// Google maps auto completion not implemented
+			// var input = document.getElementById("search")
+			// var autocomplete = new google.maps.places.Autocomplete(input);
+			// autocomplete.bindTo("bounds",map)
 
 			ViewModel.markers.forEach(function(marker){
 				marker.setMap(map)
@@ -60,10 +75,12 @@
 			// confirm(obj.id)
 			var marker = ViewModel.markers[obj.id]
 			ViewModel.selectMarker(marker)
+			ViewModel.selectInfo(marker)
 			obj.className = "lable mouseclick"
 			setTimeout(function(){
 				obj.className = "lable mouseover"
 			},100)
+			marker.infowindow
 		}
 		function overLabel(obj){
 			var marker = ViewModel.markers[obj.id]
@@ -77,7 +94,49 @@
 			obj.className = "label"
 		}
 
+/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+		function showDropdown() {
+			var filterinput = document.getElementById("filter").value
+			if(filterinput)document.getElementById("myDropdown").classList.toggle("show",true);
+			else document.getElementById("myDropdown").classList.toggle("show",false);
+		}
 
+// Close the dropdown menu if the user clicks outside of it
+	//	Block Implementation
+		window.onclick = function(event) {
+		  if (!event.target.matches('.dropbtn')) {
+
+		    var dropdowns = document.getElementsByClassName("dropdown-content");
+		    var i;
+		    for (i = 0; i < dropdowns.length; i++) {
+		      var openDropdown = dropdowns[i];
+		      if (openDropdown.classList.contains('show')) {
+		        openDropdown.classList.remove('show');
+		      }
+		    }
+		  }
+		}
+	//	Passive Implementation
+		// window.addEventListener(
+		// 	"click",
+		// 	function(event) {
+		// 		if (!event.target.matches('.dropbtn')) {
+		// 		    var dropdowns = document.getElementsByClassName("dropdown-content");
+		// 		    var i;
+		// 		    for (i = 0; i < dropdowns.length; i++) {
+		// 	  	      var openDropdown = dropdowns[i];
+		// 		      if (openDropdown.classList.contains('show')) {
+		// 		        openDropdown.classList.remove('show');
+		// 		      }
+		//     		}
+		//   		}
+		// 	},
+		// 	{passive:true}
+		// )
+
+		function setFilter(filter){
+			document.getElementById("filter").value = filter
+		}
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>

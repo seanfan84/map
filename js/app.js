@@ -1,28 +1,11 @@
-var home = {lat: -27.942575, lng: 153.408552};
-
+// var home = {lat: -27.942575, lng: 153.408552};
 var data = [
-{
-	name:"Sandcastles on the Broadwater",
-	address:"zzzzz",
-	"location" : {
-		"lat" : -27.9386457,
-		"lng" : 153.4067372
-	}
-},
-{
-	name:"Heran Building Group",
-	address:"zzzzz",
-	"location" : {
-		"lat" : -27.966909,
-		"lng" : 153.415969
-	}
-},
-{
-	name:"The Grand Apartments Gold Coast",
-	address:"zzzzz",
-	"location" : {
-		"lat" : -27.942547,
-		"lng" : 153.4093
+{	
+	name:"Ayers Rock",
+	address:"s",
+	"location":{
+		"lat":-25.3456562,
+		"lng":131.0196362
 	}
 },
 {
@@ -56,6 +39,22 @@ var data = [
 		"lat" : -27.965906,
 		"lng" : 153.4172059
 	}
+},
+{
+	name:"Sydney Harbour Bridge",
+	address:"zzzzz",
+	"location" : {
+		"lat" : -33.8523018,
+		"lng" : 151.2085984
+	}
+},
+{
+	name:"Parliament House, Canberra",
+	address:"zzzzz",
+	"location" : {
+		"lat" : -35.3082193,
+		"lng" : 149.1222036
+	}
 }
 ]
 
@@ -75,21 +74,20 @@ var mapViewModel = function() {
 	}
 	)
 
-
 	// On filter value change/update
 	self.markers = [];
 
 	self.filter.subscribe(function(newValue) {
-	    // alert("The person's new name is " + newValue);
+		// console.log(newValue)
 	    self.markers.forEach(function(marker){
 	    	// if filter is null, no filter is applied show all markers
-	    	if(newValue === null){
+	    	if(newValue === '' || newValue === null){
 	    		marker.setMap(map)
+	    		recenter()
 	    	}
 	    	else{
 	    		// Filter implementation Set qualified markers visible
 	    		if(marker.title.toLowerCase().includes(newValue.toLowerCase())){
-	    			// console.log("setmap " + marker.title)
 	    			marker.setMap(map)
 	    		}
 	    		// Filter implementation Set unqualified markers invisible
@@ -99,9 +97,7 @@ var mapViewModel = function() {
 	    	}
 	    })
 
-	    // for (var i = 0; i < this.places().length; i++) {
-	    // 	var place = this.places()[i].
-	    // }
+	    // Hide/Show Side bar list entries
 	    self.places().forEach(function(place){
 	    	if(newValue === null){
 	    		place.visible(true);
@@ -118,8 +114,10 @@ var mapViewModel = function() {
 	    })
 	});
 
-	// Make Marker List
-	self.makeMarkers = function(){
+	// Make Collaction of Markers with Click Event
+	self.makeMarkers = function(callback){
+		var bounds = new google.maps.LatLngBounds
+
 		for (var i = 0; i < data.length; i++) {
 			var marker = new google.maps.Marker({
 				position:data[i].location,
@@ -128,46 +126,63 @@ var mapViewModel = function() {
 			})
 			marker.addListener('click',(function(marker){
 				return function(){
-					// console.log(marker.title + " clicked")
 					self.selectMarker(marker)
 					self.selectInfo(marker)
 				}
 			})(marker)
 			)
+			bounds.extend(marker.position)
 			self.markers.push(marker);
 		}
+		callback(bounds)
 	}
 
-	// Select Markers
 	var previousMarker = null;
+
+	// Marker Click Event 1 - Animate Marker
 	self.selectMarker = function(marker){
+		// Stop previous marker Animation
 		if(previousMarker){
 			console.log("previousMarker")
 			previousMarker.setAnimation(null);
 			if(previousInfo)previousInfo.close();
 		}
-		// Set marker BOUNCE
+		// Set animation to the selected marker BOUNCE
 		marker.setAnimation(google.maps.Animation.BOUNCE)
 		previousMarker = marker;
 	}
 
 	var previousInfo = null;
 	self.selectInfo = function(marker){
+		// Close previous info window if left open
 		if(previousInfo){
 			previousInfo.close()
 		}
+
+		// Initialize info window
 		var info = new google.maps.InfoWindow({
-			content:"<div id='pano2' class='pano'></div>"
+			content:"<div id='infoContainer' style='width:450px'>" +
+			"<div id='pano2' class='pano'>Fetching street view</div>" +
+			"<div>Wikipedia</div></div>",
+			maxWidth:500
+		})
+		info.addListener('closeclick',function(){
+			marker.setAnimation(null);
+			recenter();
+
 		})
 
-		thirdParty(marker,function(result){
+
+
+		wiki_rest(marker,function(result){
+			console.log(result)
 			previousInfo = info;
 			info.setContent(info.getContent()+result)
 			info.open(map,marker)
 			setTimeout(function(){
 				streetView(marker,"pano2")
 			}, 200)
-
+			console.log(info.getContent())
 
 		})
 	}
@@ -179,6 +194,11 @@ var ViewModel = new mapViewModel()
 ko.applyBindings(ViewModel);
 
 
+function recenter(){
+	console.log(map.getCenter())
+	map.setCenter(center)
+	map.setZoom(zoom)
+}
 
 function streetView(marker,elementId){
 	var output;
@@ -200,7 +220,7 @@ function streetView(marker,elementId){
 	svs.getPanorama(
 		{location:tlocation,
 			preference:"best",
-			radius:50},
+			radius:500},
 			function(data,status){
 				console.log(status)
 				if(status==="OK"){
@@ -224,12 +244,10 @@ function streetView(marker,elementId){
 }
 
 
+var timeOutMessage = "Faild to get resource"
 
-
-
-var thirdParty = function(marker,callback){
-	var timeOutMessage = "Faild to get resource"
-	function wiki(marker){
+function wiki(marker,callback){
+		// console.log("doing wiki")
 		var output
 		var timeout = setTimeout(function() {
 			output = timeOutMessage;
@@ -241,13 +259,12 @@ var thirdParty = function(marker,callback){
 				"action": "opensearch",
 				"search": marker.title
 			},
-			dataType: 'jsonp',
+			dataType: 'json',
 			type: 'GET',
 			headers: {
 				'Api-User-Agent': 'Example/1.0'
 			},
 			success: function(data) {
-	            // do something with data
 	            // console.log(data)
 	            var items = []
 	            for (i = 0; i < data[1].length; i++) {
@@ -261,52 +278,74 @@ var thirdParty = function(marker,callback){
 	                	"</li>")
 	            }
 	            clearTimeout(timeout);
-	            // console.log("WIKI")
-	            var output = items.join("");
-	            console.log(output);
-	            return output;
+	            output = items.join("");
+	            // console.log(output);
+	            callback(output);
 	        }
 	    });
 	}
-	function fourSquare(marker){
-		var output;
+function wiki_rest(marker,callback){
+		var output
 		var timeout = setTimeout(function() {
 			output = timeOutMessage;
 		}, 3000);
-
+		var wiki_restful = "https://en.wikipedia.org/api/rest_v1/page/summary/" + marker.title
 		$.ajax({
-			url:placeholder,
-			dataType:"JSON",
-			type:"GET",
-			success:function(data){(
-				clearTimeout(timeout)
-				)}
-		})
-
-		output += "foursquare"
-		return output
-	}
-
-	function nytimes(marker){
-		var output;
-		var timeout = setTimeout(function() {
-			output = "Failed to get resources";
-		}, 3000);
-
-		$.ajax({
-			url:placeholder,
-			dataType:"JSON",
-			type:"GET",
-			success:function(data){(
-				clearTimeout(timeout)
-				)}
-		});
-		output += "streetView"
-		return output		
-	}
-
-	result = wiki(marker)
-	// result += fourSquare(marker)
-	// result += nytimes(marker)
-	callback(result)
+			url: wiki_restful,
+			dataType:'json',
+			statusCode:{
+				404:function(response){
+					console.log(response)
+					output = "The wikipedia resource you requested does not exist"
+					callback(output)
+				}
+			},
+			success: function(data) {
+	            console.log(data)
+	            clearTimeout(timeout);
+	            output = data.extract_html;
+	            // console.log(output);
+	            callback(output);
+	        },
+	        error:function(){
+	        	console.log("ajax request error")
+	        }
+	    });
 }
+	// function fourSquare(marker){
+	// 	var output;
+	// 	var timeout = setTimeout(function() {
+	// 		output = timeOutMessage;
+	// 	}, 3000);
+
+	// 	$.ajax({
+	// 		url:placeholder,
+	// 		dataType:"JSON",
+	// 		type:"GET",
+	// 		success:function(data){(
+	// 			clearTimeout(timeout)
+	// 			)}
+	// 	})
+
+	// 	output += "foursquare"
+	// 	return output
+	// }
+
+	// function nytimes(marker){
+	// 	var output;
+	// 	var timeout = setTimeout(function() {
+	// 		output = "Failed to get resources";
+	// 	}, 3000);
+
+	// 	$.ajax({
+	// 		url:placeholder,
+	// 		dataType:"JSON",
+	// 		type:"GET",
+	// 		success:function(data){(
+	// 			clearTimeout(timeout)
+	// 			)}
+	// 	});
+	// 	output += "ntyimes"
+	// 	return output		
+	// }
+
