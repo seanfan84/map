@@ -1,27 +1,40 @@
 html, body {
+	width: 95%;
 	height: 100%;
 	margin: 0;
-	padding: 0;
+	padding: 0px;
+	margin:auto;
 }
 
 #map {
 	width: 75%;
-    height: 600px;
+	margin:0px;
+	padding: 0px;
+    height: 100%;
     float: right;
     background-color: grey;
 }
 
 #list {
-	width: 19%;
+	width: 25%;
 	height:100%;
 	float: left;
-	background: blue;
-	padding: 10px;
+	background: #e6e6e6;
+	padding: 0px;
+	margin:0px;
+}
+
+.label {
+	font: 1em;
+	line-height: 2;
+
 }
 
 .pano {
 	width: 400px;
 	height:300px;
+	text-align: center;
+	line-height: 300px;
 }
 
 .inputbar {
@@ -37,11 +50,14 @@ html, body {
 
 .mouseover{
 	background: red;
+	line-height: 2;
 }
 
 .mouseclick{
 	background: red;
 	color: white;
+	font: 3em;
+	line-height: 2;
 }
 
 .mouseup{

@@ -55,24 +55,32 @@ var data = [
 		"lat" : -35.3082193,
 		"lng" : 149.1222036
 	}
+},
+{
+	name:"Blablabla Error Test",
+	address:"zzzzz",
+	"location" : {
+		"lat" : -25.3456562,
+		"lng" : 149.1222036
+	}	
 }
-]
+];
 
 var Place = function(data){
 	this.name = data.name;
 	this.location = data.location;
 	this.visible = ko.observable(true);
-}
+};
 
 var mapViewModel = function() {
 	var self = this;
 	self.filter = ko.observable();
 	self.places = ko.observableArray();
 	data.forEach(function(entry){
-		var place = new Place(entry)
+		var place = new Place(entry);
 		self.places.push(place);
 	}
-	)
+	);
 
 	// On filter value change/update
 	self.markers = [];
@@ -82,20 +90,20 @@ var mapViewModel = function() {
 	    self.markers.forEach(function(marker){
 	    	// if filter is null, no filter is applied show all markers
 	    	if(newValue === '' || newValue === null){
-	    		marker.setMap(map)
-	    		recenter()
+	    		marker.setMap(map);
+	    		recenter();
 	    	}
 	    	else{
 	    		// Filter implementation Set qualified markers visible
 	    		if(marker.title.toLowerCase().includes(newValue.toLowerCase())){
-	    			marker.setMap(map)
+	    			marker.setMap(map);
 	    		}
 	    		// Filter implementation Set unqualified markers invisible
 	    		else{
 	    			marker.setMap(null);
 	    		}		
 	    	}
-	    })
+	    });
 
 	    // Hide/Show Side bar list entries
 	    self.places().forEach(function(place){
@@ -105,37 +113,37 @@ var mapViewModel = function() {
 	    	else{
 	    		if(place.name.toLowerCase().includes(newValue.toLowerCase())){
 	    			place.visible(true);
-	    			console.log("show " + place.name)
+	    			console.log("show " + place.name);
 	    		}
 	    		else{
 	    			place.visible(false);
 	    		}
 	    	}
-	    })
+	    });
 	});
 
 	// Make Collaction of Markers with Click Event
 	self.makeMarkers = function(callback){
-		var bounds = new google.maps.LatLngBounds
+		var bounds = new google.maps.LatLngBounds();
 
 		for (var i = 0; i < data.length; i++) {
 			var marker = new google.maps.Marker({
 				position:data[i].location,
 				title:data[i].name,
 				label:(i+1).toString(),
-			})
-			marker.addListener('click',(function(marker){
+			});
+			marker.addListener('click',(function(thisMarker){
 				return function(){
-					self.selectMarker(marker)
-					self.selectInfo(marker)
-				}
-			})(marker)
-			)
-			bounds.extend(marker.position)
+					self.selectMarker(thisMarker);
+					self.selectInfo(thisMarker);
+				};
+			}(marker))
+			);
+			bounds.extend(marker.position);
 			self.markers.push(marker);
 		}
-		callback(bounds)
-	}
+		callback(bounds);
+	};
 
 	var previousMarker = null;
 
@@ -143,73 +151,69 @@ var mapViewModel = function() {
 	self.selectMarker = function(marker){
 		// Stop previous marker Animation
 		if(previousMarker){
-			console.log("previousMarker")
+			// console.log("previousMarker");
 			previousMarker.setAnimation(null);
 			if(previousInfo)previousInfo.close();
 		}
 		// Set animation to the selected marker BOUNCE
-		marker.setAnimation(google.maps.Animation.BOUNCE)
+		marker.setAnimation(google.maps.Animation.BOUNCE);
 		previousMarker = marker;
-	}
+	};
 
 	var previousInfo = null;
 	self.selectInfo = function(marker){
 		// Close previous info window if left open
 		if(previousInfo){
-			previousInfo.close()
+			previousInfo.close();
 		}
 
 		// Initialize info window
 		var info = new google.maps.InfoWindow({
-			content:"<div id='infoContainer' style='width:450px'>" +
+			content:"<div id='infoContainer' style='width:450px'><strong>Street View</strong>" +
 			"<div id='pano2' class='pano'>Fetching street view</div>" +
-			"<div>Wikipedia</div></div>",
+			"<div><strong>Wikipedia</strong></div></div>",
 			maxWidth:500
-		})
+		});
 		info.addListener('closeclick',function(){
 			marker.setAnimation(null);
 			recenter();
-
-		})
-
-
+		});
 
 		wiki_rest(marker,function(result){
-			console.log(result)
 			previousInfo = info;
-			info.setContent(info.getContent()+result)
-			info.open(map,marker)
+			info.setContent(info.getContent()+result);
+			info.open(map,marker);
 			setTimeout(function(){
-				streetView(marker,"pano2")
-			}, 200)
-			console.log(info.getContent())
+				streetView(marker,"pano2");
+			}, 500);
+			// console.log(info.getContent());
+		});
+	};
+};
 
-		})
-	}
-	// List Hover
-}
-
-var ViewModel = new mapViewModel()
+var ViewModel = new mapViewModel();
 // ViewModel.current.subscribe()
 ko.applyBindings(ViewModel);
 
 
+// Recenter the map
 function recenter(){
-	console.log(map.getCenter())
-	map.setCenter(center)
-	map.setZoom(zoom)
+	map.setCenter(center);
+	map.setZoom(zoom);
 }
+
+var timeOutMessage = "Faild to get resource";
 
 function streetView(marker,elementId){
 	var output;
 	var theading;
-	var tlocation = marker.position
+	var tlocation = marker.position;
 	var timeout = setTimeout(function() {
-		output = "timeOutMessage";
+		output = timeOutMessage;
 	}, 3000);
-	var el = document.getElementById(elementId)
-	console.log(el)
-	var svs = new google.maps.StreetViewService()
+	var el = document.getElementById(elementId);
+	// console.log(el);
+	var svs = new google.maps.StreetViewService();
 	var panorama = new google.maps.StreetViewPanorama(
 		el,
 		{
@@ -222,14 +226,15 @@ function streetView(marker,elementId){
 			preference:"best",
 			radius:500},
 			function(data,status){
-				console.log(status)
+				// console.log(status);
 				if(status==="OK"){
+					clearTimeout(timeout);
 					panorama.setPano(data.location.pano);
-					console.log(data.location)
+					// console.log(data.location);
 					theading = google.maps.geometry.spherical.computeHeading(
 						data.location.latLng, 
 						tlocation
-						)
+						);
 					panorama.setPov({
 						heading: theading,
 						pitch: 0
@@ -237,78 +242,83 @@ function streetView(marker,elementId){
 					panorama.setVisible(true);					
 				}
 				else{
-					console.log("streetView Data not found")
+					// output = "<strong>Street View</strong><br>Could not find a matching street view"
+					// console.log("streetView Data not found");
+					panorama.setVisible(false);	
+					el.innerHTML = "<font color = 'red'>Oops, the street view could not be found!</font>"
 				}
 			}
-			)
+	);
 }
 
 
-var timeOutMessage = "Faild to get resource"
+// // Only restful API is implemented
+// function wiki(marker,callback){
+// 		// console.log("doing wiki")
+// 		var output;
+// 		var timeout = setTimeout(function() {
+// 			output = timeOutMessage;
+// 		}, 3000);
+// 		var wiki_url = "https://en.wikipedia.org/w/api.php";
+// 		$.ajax({
+// 			url: wiki_url,
+// 			data: {
+// 				"action": "opensearch",
+// 				"search": marker.title
+// 			},
+// 			dataType: 'json',
+// 			type: 'GET',
+// 			headers: {
+// 				'Api-User-Agent': 'Example/1.0'
+// 			},
+// 			success: function(data) {
+// 	            // console.log(data);
+// 	            var items = [];
+// 	            for (i = 0; i < data[1].length; i++) {
+// 	                // console.log(data[1][i])
+// 	                // console.log(data[2][i])
+// 	                // console.log(data[3][i])
+// 	                items.push("<li class='article'>" +
+// 	                	"<a href='" + data[3][i] + "'>" +
+// 	                	data[1][i] +
+// 	                	"</a>" + "<p>" + data[2][i] + "</p>" +
+// 	                	"</li>");
+// 	            }
+// 	            clearTimeout(timeout);
+// 	            output = items.join("");
+// 	            // console.log(output);
+// 	            callback(output);
+// 	        }
+// 	    });
+// 	}
 
-function wiki(marker,callback){
-		// console.log("doing wiki")
-		var output
-		var timeout = setTimeout(function() {
-			output = timeOutMessage;
-		}, 3000);
-		var wiki_url = "https://en.wikipedia.org/w/api.php"
-		$.ajax({
-			url: wiki_url,
-			data: {
-				"action": "opensearch",
-				"search": marker.title
-			},
-			dataType: 'json',
-			type: 'GET',
-			headers: {
-				'Api-User-Agent': 'Example/1.0'
-			},
-			success: function(data) {
-	            // console.log(data)
-	            var items = []
-	            for (i = 0; i < data[1].length; i++) {
-	                // console.log(data[1][i])
-	                // console.log(data[2][i])
-	                // console.log(data[3][i])
-	                items.push("<li class='article'>" +
-	                	"<a href='" + data[3][i] + "'>" +
-	                	data[1][i] +
-	                	"</a>" + "<p>" + data[2][i] + "</p>" +
-	                	"</li>")
-	            }
-	            clearTimeout(timeout);
-	            output = items.join("");
-	            // console.log(output);
-	            callback(output);
-	        }
-	    });
-	}
 function wiki_rest(marker,callback){
-		var output
+		var output;
 		var timeout = setTimeout(function() {
 			output = timeOutMessage;
 		}, 3000);
-		var wiki_restful = "https://en.wikipedia.org/api/rest_v1/page/summary/" + marker.title
+		var wiki_restful = "https://en.wikipedia.org/api/rest_v1/page/summary/" + marker.title;
 		$.ajax({
 			url: wiki_restful,
 			dataType:'json',
-			statusCode:{
-				404:function(response){
-					console.log(response)
-					output = "The wikipedia resource you requested does not exist"
-					callback(output)
-				}
-			},
+			// statusCode:{
+			// 	404:function(response){
+			// 		// console.log(response);
+			// 		output = "<font color='red'>The wikipedia resource you requested does not exist</font>";
+			// 		callback(output);
+			// 	}
+			// },
 			success: function(data) {
-	            console.log(data)
+	            // console.log(data);
 	            clearTimeout(timeout);
 	            output = data.extract_html;
 	            // console.log(output);
 	            callback(output);
 	        },
 	        error:function(){
-	        	console.log("ajax request error")
+	        	output = "<font color='red'>The wikipedia resource you requested does not exist</font>";
+				callback(output);
+	        	// console.log("ajax request error");
 	        }
 	    });
 }

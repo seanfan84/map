@@ -12,7 +12,7 @@
 <!-- Only Place Holder: This not implemented -->
 <!-- 		<input id="search" class="inputbar" data-bind="" placeholder="search"> -->
 
-		<input id="filter" class="inputbar" data-bind="{textInput:filter}" type="" name="" placeholder="Search" oninput="showDropdown()" onblur="">
+		<input id="filter" class="inputbar" data-bind="{textInput:filter}" type="search" name="" placeholder="Search" oninput="showDropdown()" onblur="">
 		<div class="dropdown">
 			  <div id="myDropdown" class="dropdown-content" data-bind="foreach:places">
 
@@ -23,7 +23,7 @@
 <!-- 		<div style="height:1em" data-bind="text:'Test:'+ filter()"> </div>
  -->		
 		<div data-bind="foreach:places">
-			<div id="" class="label" data-bind="text:$index()+1+'.' + name, attr: {id:$index()},visible:visible" onload="console.log(1)" onclick = "clickLabel(this)" onmouseover="overLabel(this)" onmouseleave="leaveLable(this)">
+			<div id="" class="label" data-bind="text:$index()+1+'.' + name, attr: {id:$index()},visible:visible" onclick = "clickLabel(this)" onmouseover="overLabel(this)" onmouseleave="leaveLable(this)">
 			</div>
 		</div>
 	</div>
@@ -41,7 +41,6 @@
 		},5000)
 
 		function initMap() {
-
 			map = new google.maps.Map(document.getElementById('map'), {
 				// zoom: 12,
 				// center: home,
@@ -52,6 +51,12 @@
 
 			ViewModel.makeMarkers(function(bounds){
 				map.fitBounds(bounds,50)
+			//Use event listener for resize on window
+				// google.maps.event.addDomListener(window, 'resize',
+				// 	function() {
+				//     	//Set Center
+				//  		map.fitBounds(bounds,50);
+				// });
 			})
 
 			clearTimeout(checkGoogleLibrary)
@@ -59,7 +64,7 @@
 			setTimeout(function(){
 				center = map.getCenter()
 				zoom = map.getZoom()
-				console.log("zoom" + zoom + "center" + center)
+				// console.log("zoom" + zoom + "center" + center)
 			},800)
 			
 // Google maps auto completion not implemented
@@ -70,13 +75,16 @@
 			ViewModel.markers.forEach(function(marker){
 				marker.setMap(map)
 			});
+
+
+
 		}
 		function clickLabel(obj){
 			// confirm(obj.id)
 			var marker = ViewModel.markers[obj.id]
 			ViewModel.selectMarker(marker)
 			ViewModel.selectInfo(marker)
-			obj.className = "lable mouseclick"
+			obj.className = "mouseclick"
 			setTimeout(function(){
 				obj.className = "lable mouseover"
 			},100)
@@ -85,7 +93,7 @@
 		function overLabel(obj){
 			var marker = ViewModel.markers[obj.id]
 			ViewModel.selectMarker(marker)
-			console.log(obj.class)
+			// console.log(obj.class)
 			obj.className = "label mouseover"
 		}
 		function leaveLable(obj){
@@ -137,6 +145,7 @@
 		function setFilter(filter){
 			document.getElementById("filter").value = filter
 		}
+
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
