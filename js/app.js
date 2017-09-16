@@ -1,4 +1,3 @@
-// var home = {lat: -27.942575, lng: 153.408552};
 var data = [
 {	
 	name:"Ayers Rock",
@@ -191,10 +190,10 @@ var mapViewModel = function() {
 	};
 };
 
+
 var ViewModel = new mapViewModel();
 // ViewModel.current.subscribe()
 ko.applyBindings(ViewModel);
-
 
 // Recenter the map
 function recenter(){
@@ -322,6 +321,7 @@ function wiki_rest(marker,callback){
 	        }
 	    });
 }
+
 	// function fourSquare(marker){
 	// 	var output;
 	// 	var timeout = setTimeout(function() {
