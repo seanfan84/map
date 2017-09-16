@@ -1,47 +1,34 @@
 var data = [
 {	
 	name:"Ayers Rock",
-	address:"s",
 	"location":{
 		"lat":-25.3456562,
 		"lng":131.0196362
 	}
 },
-{
-	name:"Cafe Gold Coast",
-	address:"zzzzz",
-	"location" : {
-		"lat" : -27.9446507,
-		"lng" : 153.4098823
-	}
-},
-{
-	name:"Sea World",
-	address:"zzzzz",
-	"location" : {
-		"lat" : -27.9532454,
-		"lng" : 153.4259149	
-	}
-},
+// {
+// 	name:"Sea World",
+// 	"location" : {
+// 		"lat" : -27.9532454,
+// 		"lng" : 153.4259149	
+// 	}
+// },
 {
 	name:"Warner Bros. Movie World",
-	address:"zzzzz",
 	"location" : {
 		lat:-27.9109247,
 		lng:153.3108152
 	}
 },
-{
-	name:"Broadwater Parkland",
-	address:"zzzzz",
-	"location" : {
-		"lat" : -27.965906,
-		"lng" : 153.4172059
-	}
-},
+// {
+// 	name:"Broadwater Parkland",
+// 	"location" : {
+// 		"lat" : -27.965906,
+// 		"lng" : 153.4172059
+// 	}
+// },
 {
 	name:"Sydney Harbour Bridge",
-	address:"zzzzz",
 	"location" : {
 		"lat" : -33.8523018,
 		"lng" : 151.2085984
@@ -49,15 +36,20 @@ var data = [
 },
 {
 	name:"Parliament House, Canberra",
-	address:"zzzzz",
 	"location" : {
 		"lat" : -35.3082193,
 		"lng" : 149.1222036
 	}
 },
 {
+	name:"Whitsunday Island",
+	"location":{
+		"lat":-20.3541826,
+		"lng":148.9459432
+	}
+},
+{
 	name:"Blablabla Error Test",
-	address:"zzzzz",
 	"location" : {
 		"lat" : -25.3456562,
 		"lng" : 149.1222036
