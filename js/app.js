@@ -171,6 +171,7 @@ var mapViewModel = function() {
 		});
 
 		wiki_rest(marker,function(result){
+		// wiki(marker,function(result){
 			previousInfo = info;
 			info.setContent(info.getContent()+result);
 			info.open(map,marker);
@@ -179,6 +180,15 @@ var mapViewModel = function() {
 			}, 500);
 			// console.log(info.getContent());
 		});
+
+		// wiki(marker,function(result){
+		// 	previousInfo = info;
+		// 	info.setContent(info.getContent()+result);
+		// 	info.open(map,marker);
+		// 	setTimeout(function(){
+		// 		streetView(marker,"pano2");
+		// 	}, 500);		
+		// });
 	};
 };
 
@@ -193,17 +203,16 @@ function recenter(){
 	map.setZoom(zoom);
 }
 
-var timeOutMessage = "Faild to get resource";
+var timeOutMessage = "<font color = 'red'>Oops, there may be a connection issue</font>";
 
 function streetView(marker,elementId){
 	var output;
 	var theading;
 	var tlocation = marker.position;
-	var timeout = setTimeout(function() {
-		output = timeOutMessage;
-	}, 3000);
 	var el = document.getElementById(elementId);
 	// console.log(el);
+
+
 	var svs = new google.maps.StreetViewService();
 	var panorama = new google.maps.StreetViewPanorama(
 		el,
@@ -219,7 +228,6 @@ function streetView(marker,elementId){
 			function(data,status){
 				// console.log(status);
 				if(status==="OK"){
-					clearTimeout(timeout);
 					panorama.setPano(data.location.pano);
 					// console.log(data.location);
 					theading = google.maps.geometry.spherical.computeHeading(
@@ -230,13 +238,17 @@ function streetView(marker,elementId){
 						heading: theading,
 						pitch: 0
 					});
-					panorama.setVisible(true);					
+					panorama.setVisible(true);			
 				}
-				else{
-					// output = "<strong>Street View</strong><br>Could not find a matching street view"
-					// console.log("streetView Data not found");
+				// if no result
+				else if(status==="ZERO_RESULTS"){
 					panorama.setVisible(false);	
-					el.innerHTML = "<font color = 'red'>Oops, the street view could not be found!</font>"
+					el.innerHTML = "<font color = 'red'>Oops, the street view could not be found!</font>";
+				}
+				// Other error
+				else{
+					output = timeOutMessage;
+					el.innerHTML = timeOutMessage;				
 				}
 			}
 	);
@@ -257,7 +269,8 @@ function streetView(marker,elementId){
 // 				"action": "opensearch",
 // 				"search": marker.title
 // 			},
-// 			dataType: 'json',
+//   			crossDomain: true,
+// 			dataType: 'jsonfm',
 // 			type: 'GET',
 // 			headers: {
 // 				'Api-User-Agent': 'Example/1.0'
@@ -285,13 +298,12 @@ function streetView(marker,elementId){
 
 function wiki_rest(marker,callback){
 		var output;
-		var timeout = setTimeout(function() {
-			output = timeOutMessage;
-		}, 3000);
 		var wiki_restful = "https://en.wikipedia.org/api/rest_v1/page/summary/" + marker.title;
+		
 		$.ajax({
 			url: wiki_restful,
 			dataType:'json',
+			crossDomain:true,
 			// statusCode:{
 			// 	404:function(response){
 			// 		// console.log(response);
@@ -301,15 +313,20 @@ function wiki_rest(marker,callback){
 			// },
 			success: function(data) {
 	            // console.log(data);
-	            clearTimeout(timeout);
 	            output = data.extract_html;
 	            // console.log(output);
 	            callback(output);
 	        },
-	        error:function(){
-	        	output = "<font color='red'>The wikipedia resource you requested does not exist</font>";
+	        error:function(xhr,status,error){
+	        	// console.log(xhr.status + "|"+status + "-" +error)
+	            // clearTimeout(timeout);
+	            if(xhr.status === 404){
+	            	output = "<font color='red'>The wikipedia resource you requested does not exist</font>";
+	            }
+	            else{
+	            	output = timeOutMessage
+	            }
 				callback(output);
-	        	// console.log("ajax request error");
 	        }
 	    });
 }
