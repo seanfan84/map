@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"time",
+				"timeout\tsetTimeout function"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"mapbond",
+				"mapbounds"
+			],
+			[
+				"filter",
+				"filterinput"
+			],
+			[
+				"fore",
+				"foreach"
+			],
+			[
+				"wiki_res",
+				"wiki_rest"
+			],
+			[
+				"wiki",
+				"wiki_restful"
+			],
+			[
+				"wik",
+				"wiki_restful"
+			],
+			[
 				"da",
 				"dataType"
 			],
@@ -82,10 +114,6 @@
 			[
 				"con",
 				"console\t{}"
-			],
-			[
-				"wik",
-				"wikiTimeout"
 			],
 			[
 				"her",
@@ -344,10 +372,6 @@
 				"IF"
 			],
 			[
-				"li",
-				"link\tTag"
-			],
-			[
 				"flas",
 				"flash\tfunction"
 			],
@@ -490,62 +514,11 @@
 			[
 				"js",
 				"jsonify\tstatement"
-			],
-			[
-				"s",
-				"serialize"
-			],
-			[
-				"men",
-				"MenuItem\tclass"
-			],
-			[
-				"g",
-				"getMenuItemByID\tfunction"
-			],
-			[
-				"ed",
-				"editMenuItem"
-			],
-			[
-				"metho",
-				"method"
-			],
-			[
-				"h",
-				"html\thtml"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "homepage.html",
-			"settings":
-			{
-				"buffer_size": 2513,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/style.css",
-			"settings":
-			{
-				"buffer_size": 421,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/app.js",
-			"settings":
-			{
-				"buffer_size": 5828,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -554,10 +527,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 327.0,
-		"last_filter": "ind",
+		"height": 267.0,
+		"last_filter": "package in",
 		"selected_items":
 		[
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
 			[
 				"ind",
 				"Indentation: Reindent Lines"
@@ -619,7 +604,7 @@
 				"Indentation: Reindent Lines"
 			]
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -651,6 +636,9 @@
 	],
 	"file_history":
 	[
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/app.js",
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/css/style.css",
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/homepage.html",
 		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/L07E09 MAP/map.html",
 		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/homepage.html",
 		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/app.js",
@@ -775,14 +763,11 @@
 		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/restaurant.pyc",
 		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/database_setup.py",
 		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/editmenuitem.html",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/menu.html",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/webserver2.py",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/lotsofmenus.py",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/python_server.py"
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/menu.html"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -796,6 +781,40 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"elif",
+			"elseif",
+			"ajax",
+			"streetview",
+			"wikipedia",
+			"timeout",
+			"console.log",
+			"filter",
+			"selectmarker",
+			"makeMarkers",
+			"initmap",
+			"callback",
+			"listener",
+			"event",
+			"addevent",
+			"eventL",
+			"eventli",
+			"recenter",
+			"resenter",
+			"button",
+			"checkgoogle",
+			"filter",
+			"inner",
+			"bounds",
+			"callback",
+			"addlist",
+			"recent",
+			"markers.",
+			"result",
+			"input",
+			"inputmar",
+			"placeholder",
+			"timeout",
+			"maps",
 			"out",
 			"oot",
 			"marker",
@@ -889,41 +908,7 @@
 			"me",
 			"checking",
 			"fbdisconnect",
-			"state",
-			"login",
-			"transaction",
-			"\t",
-			"036",
-			"\"",
-			"~",
-			",",
-			", ",
-			"|",
-			",",
-			"，",
-			"sendTokenTo",
-			"code",
-			"codecs",
-			"hash",
-			"render(",
-			"render",
-			"150",
-			"(\"/\")\n",
-			"render(",
-			"render_template",
-			"showCatalog",
-			"catalog",
-			"Catalog",
-			"catalog",
-			"rest",
-			"restaurant",
-			"catelog",
-			"Restaurant",
-			"restaurant",
-			"Restaurants",
-			"restaurants",
-			"Menu",
-			"menu_id"
+			"state"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -980,109 +965,19 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "homepage.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2513,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1688,
-								1688
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 694.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "css/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 421,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								376,
-								376
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 2,
-					"file": "js/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5828,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								247,
-								247
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 31.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1108,7 +1003,7 @@
 		"cols":
 		[
 			0.0,
-			0.458978538517,
+			0.479966200409,
 			1.0
 		],
 		"rows":
@@ -1130,7 +1025,7 @@
 	"project": "project_project.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

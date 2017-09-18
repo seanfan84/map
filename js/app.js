@@ -117,19 +117,21 @@ var mapViewModel = function() {
 	self.makeMarkers = function(callback){
 		var bounds = new google.maps.LatLngBounds();
 
+		function handleMarker(thisMarker){
+				return function(){
+					self.selectMarker(thisMarker);
+					self.selectInfo(thisMarker);
+				};
+		}
+
 		for (var i = 0; i < data.length; i++) {
 			var marker = new google.maps.Marker({
 				position:data[i].location,
 				title:data[i].name,
 				label:(i+1).toString(),
 			});
-			marker.addListener('click',(function(thisMarker){
-				return function(){
-					self.selectMarker(thisMarker);
-					self.selectInfo(thisMarker);
-				};
-			}(marker))
-			);
+
+			marker.addListener('click',handleMarker(marker));
 			bounds.extend(marker.position);
 			self.markers.push(marker);
 		}
@@ -324,7 +326,7 @@ function wiki_rest(marker,callback){
 	            	output = "<font color='red'>The wikipedia resource you requested does not exist</font>";
 	            }
 	            else{
-	            	output = timeOutMessage
+	            	output = timeOutMessage;
 	            }
 				callback(output);
 	        }
