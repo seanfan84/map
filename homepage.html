@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-<!-- Update 1.1 meta viewport -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src='js/knockout-3.4.2.js'></script>
+    <title></title>
+    <!-- Update 1.2 type property removed -->
+    <!-- Update 1.2 js load moved to end of file, and reordered -->
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-	<div id="map">MAP</div>
-	<div id="list">
-		<h3>Sean Favourate</h3>
-		<p>Hint1:search and hit enter to filter list</p>
-		<p>Hint2:search select from dropdown to auto complete</p>
-		<p>Hint3:ESC key will close infowindow</p>
+    <div id="map">MAP</div>
+    <div id="list">
+        <h3>Sean Favourate</h3>
+        <p>Hint1:search and hit enter to filter list</p>
+        <p>Hint2:search select from dropdown to auto complete</p>
+        <p>Hint3:ESC key will close infowindow</p>
 
-<!-- Search bar and dropdown list -->
-<!-- Update 1.1 Removed all vanilla and JQuery event listeners-->
-		<input id="filter" class="inputbar" data-bind="{textInput:filter,hasFocus:searchHasFocus,event:{keypress:$root.onEnter}}" type="search" name="" placeholder="Search" onblur="">
-		<div class="dropdown" data-bind="visible:dropdownvisible">
-			  <div id="myDropdown" class="dropdown-content" data-bind="foreach:places">
-			    <a href="#" data-bind="text:name,visible:visible, click:ViewModel.setFilter"></a>
-			  </div>
-		</div>
-<!-- List View -->
-		<div data-bind="foreach:places">
-			<div id="" class="label" data-bind="text:$index()+1+'.' + name, attr: {id:$index()},visible:visible,click:function(data,event){clickLabel(event,$index())}">
-			</div>
-		</div>
+        <!-- Search bar and dropdown list -->
+        <!-- Update 1.2 keydown, click, esc implemented with custom binding-->
+        <input id="filter" class="inputbar" data-bind="{textInput:filter,hasFocus:searchHasFocus,dropdownController:true" type="search" name="" placeholder="Search" onblur="">
+        <div class="dropdown" data-bind="visible:dropdownvisible">
+            <div id="myDropdown" class="dropdown-content" data-bind="foreach:places">
+                <a href="#" data-bind="text:name,visible:visible, click:viewModel.setFilter"></a>
+            </div>
+        </div>
+        <!-- List View -->
+        <div data-bind="foreach:places">
+            <div id="" class="label" data-bind="text:$index()+1+'.' + name, attr: {id:$index()},visible:visible,click:function(data,event){clickLabel(event,$index())}">
+            </div>
+        </div>
+    </div>
 
-	</div>
-<!-- Map -->
-<!-- 	<div id="pano" class="pano"></div>
- --><!-- Scripts -->
-	<script type="text/javascript" src="js/data.js"></script>
-	<script src='js/app.js'></script>
-<!-- Error handling when google script could not be aquired. -->
-	<script onerror="alert('Google Maps could not be initialized')"src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB7SJJaAkmrUYuGUurw8zSPB1lvEKG43cE&callback=initMap" async defer></script>
-	<script>
-
-	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='js/knockout-3.4.2.js'></script>
+    <script src="js/data.js"></script>
+    <script src='js/app.js'></script>
+    <script onerror="alert('Google Maps could not be initialized')" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB7SJJaAkmrUYuGUurw8zSPB1lvEKG43cE&callback=initMap" async defer>
+    </script>
 </body>
+
 </html>

@@ -1,6 +1,23 @@
 //This text file stores some code that I deleted from this project, but I may need to refer to them for other projects
 
 
+
+// window.onclick = function(event) {
+//   // if (!event.target.matches('.dropbtn')) {}
+//       viewModel.dropdownvisible(false);
+// };
+
+// window.onkeyup = function(event){
+// 	if(event.keyCode === 27 && infoVis === true){
+// 		info.close();
+// 		viewModel.stopMarkerAnimation();
+// 		recenter();
+// 	}
+// };
+
+
+
+
 	// function fourSquare(marker){
 	// 	var output;
 	// 	var timeout = setTimeout(function() {

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"key",
+				"keypress"
+			],
+			[
 				"View",
 				"ViewModel"
 			],
@@ -510,10 +514,6 @@
 			[
 				"delete",
 				"deleteMenuItem\tfunction"
-			],
-			[
-				"rest",
-				"restaurant_id"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "homepage.html",
 			"settings":
 			{
-				"buffer_size": 1845,
+				"buffer_size": 1881,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -532,7 +532,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 8503,
+				"buffer_size": 9846,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -797,9 +797,23 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"viewModel",
+			"  console",
+			"\tconsole",
+			"\tco",
+			"console",
+			"27",
+			"key",
+			"window.k",
+			"esc",
+			"ViewModel",
+			"viewModel",
+			"target",
+			"wiki_rest",
+			"wiki",
 			" == ",
 			"== ",
 			"==",
@@ -913,21 +927,7 @@
 			"  ",
 			"uluru",
 			">\n",
-			"port",
-			"authorization2",
-			"catelog",
-			"showhome",
-			"\"Successfully disconnected\"",
-			"checkuser",
-			"showhome",
-			"checkuser",
-			"authorization",
-			"author",
-			"authorization",
-			"author",
-			"login()",
-			"category_name'",
-			"category_name"
+			"port"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -993,15 +993,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1845,
+						"buffer_size": 1881,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								484,
-								484
+								330,
+								330
 							]
 						],
 						"settings":
@@ -1013,7 +1013,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1028,15 +1028,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8503,
+						"buffer_size": 9846,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								791,
-								791
+								536,
+								536
 							]
 						],
 						"settings":
@@ -1045,10 +1045,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 70.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1082,7 +1082,7 @@
 		"cols":
 		[
 			0.0,
-			0.395561765558,
+			0.404410617599,
 			1.0
 		],
 		"rows":
@@ -1134,7 +1134,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
