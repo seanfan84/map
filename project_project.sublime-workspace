@@ -532,7 +532,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 8505,
+				"buffer_size": 8503,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -800,6 +800,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" == ",
+			"== ",
+			"==",
+			"!= ",
+			"window",
 			"previousinfo",
 			"map",
 			"info.open",
@@ -922,12 +927,7 @@
 			"author",
 			"login()",
 			"category_name'",
-			"category_name",
-			"showproducts",
-			"login",
-			"showhome",
-			"route",
-			"showhome"
+			"category_name"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1028,15 +1028,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8505,
+						"buffer_size": 8503,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3340,
-								3340
+								791,
+								791
 							]
 						],
 						"settings":
@@ -1045,7 +1045,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1686.0,
+						"translation.y": 70.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

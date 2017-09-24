@@ -63,7 +63,7 @@ var MapViewModel = function() {
 	    	}
 	    });
 	    // Controls dropdown list when search text updates
-		if(newValue != false){
+		if(newValue !== ""){
 			// console.log(true);
 			self.dropdownvisible(true);
 		}
