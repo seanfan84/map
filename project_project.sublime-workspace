@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"View",
+				"ViewModel"
+			],
+			[
+				"dom",
+				"domReady"
+			],
+			[
+				"selected",
+				"selectedMarker"
+			],
+			[
+				"street",
+				"streetView"
+			],
+			[
+				"selec",
+				"selectedMarker"
+			],
+			[
+				"drop",
+				"dropdownvisible"
+			],
+			[
+				"mouse",
+				"mouseover"
+			],
+			[
+				"clic",
+				"clickLabel"
+			],
+			[
+				"view",
+				"ViewModel"
+			],
+			[
+				"previo",
+				"previousMarker"
+			],
+			[
+				"lo",
+				"location"
+			],
+			[
+				"vi",
+				"ViewModel"
+			],
+			[
 				"time",
 				"timeout\tsetTimeout function"
 			],
@@ -436,10 +484,6 @@
 				"credentials"
 			],
 			[
-				"lo",
-				"loads\tfunction"
-			],
-			[
 				"cl",
 				"CLIENT_ID"
 			],
@@ -470,55 +514,29 @@
 			[
 				"rest",
 				"restaurant_id"
-			],
-			[
-				"sho",
-				"showMenu\tfunction"
-			],
-			[
-				"ge",
-				"getResaurantById\tfunction"
-			],
-			[
-				"edit",
-				"editRestaurant\tfunction"
-			],
-			[
-				"newr",
-				"newrest\tstatement"
-			],
-			[
-				"base",
-				"Base\tinstance"
-			],
-			[
-				"session",
-				"Session\tstatement"
-			],
-			[
-				"p",
-				"price"
-			],
-			[
-				"resu",
-				"restaurants\tstatement"
-			],
-			[
-				"render_",
-				"render_template\tfunction"
-			],
-			[
-				"de",
-				"debug\tstatement"
-			],
-			[
-				"js",
-				"jsonify\tstatement"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "homepage.html",
+			"settings":
+			{
+				"buffer_size": 1845,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/app.js",
+			"settings":
+			{
+				"buffer_size": 8505,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -632,13 +650,18 @@
 	"expanded_folders":
 	[
 		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project",
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/css",
 		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js"
 	],
 	"file_history":
 	[
-		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/app.js",
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/README.md",
 		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/css/style.css",
 		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/homepage.html",
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/app.js",
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/data.js",
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/test.html",
+		"/Users/yilongfan/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/reference.txt",
 		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/L07E09 MAP/map.html",
 		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/homepage.html",
 		"/C/Users/seanf/OneDrive/Full_Stack/06 The Frontend JS AJAX/Project/js/app.js",
@@ -759,11 +782,7 @@
 		"/C/Users/seanf/Dropbox/Rrecipt_567453557292196525.pdf",
 		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/FinalProject/lotsofmenus.py",
 		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/deletemenuitem.html",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/restaurant.py",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/restaurant.pyc",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/database_setup.py",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/editmenuitem.html",
-		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/templates/menu.html"
+		"/C/Users/seanf/OneDrive/Full_Stack/05Catelogue/vagsurface/Code/restaurant.py"
 	],
 	"find":
 	{
@@ -781,6 +800,58 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"previousinfo",
+			"map",
+			"info.open",
+			"info.close",
+			"info",
+			"window",
+			"console.log",
+			"dom",
+			"keycode",
+			"street",
+			"info",
+			"info.",
+			"info",
+			"eventlis",
+			"selectedm",
+			"getstr",
+			"selectedMarker",
+			"onenter",
+			"event",
+			"filter",
+			"keyCode",
+			"dropdownvisible",
+			"testenter",
+			"selected",
+			"pano",
+			"streetview",
+			"previousMarker",
+			"selected",
+			"marker",
+			"selected",
+			"streetview",
+			"zoom",
+			"bounds",
+			"fit",
+			"event",
+			"places",
+			"defer",
+			"async",
+			"onclick",
+			"}\n",
+			"previousinfo",
+			"leave",
+			"infowindow",
+			"infowind",
+			"pano",
+			"selectinfo",
+			"infos",
+			"info",
+			"infos",
+			"info",
+			"mouse",
+			"mouse over",
 			"elif",
 			"elseif",
 			"ajax",
@@ -856,59 +927,7 @@
 			"login",
 			"showhome",
 			"route",
-			"showhome",
-			"categories",
-			"generalData",
-			"generaldata",
-			"login",
-			"checkuser",
-			"tender_",
-			"username",
-			"login",
-			"showlog",
-			"error[",
-			"crud.showProducts",
-			"home",
-			"show",
-			"home",
-			"showerror",
-			"error",
-			"onchange",
-			"product",
-			"loadCategory",
-			"TODO",
-			"products",
-			"price",
-			"cost",
-			"price",
-			"one_or",
-			"client_id",
-			"secret",
-			"client_sec",
-			"oauth2",
-			"signincall",
-			"login",
-			"statuschangecallback",
-			"(response)",
-			"response",
-			"token",
-			"login.html",
-			"getLoginStatus",
-			"statusChangeCallback",
-			"getloginstatus",
-			"test",
-			"access",
-			"facebook",
-			"if login_session['provider",
-			"if",
-			"scope",
-			"facebook",
-			"me\\",
-			"me/",
-			"me",
-			"checking",
-			"fbdisconnect",
-			"state"
+			"showhome"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -965,13 +984,73 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "homepage.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1845,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								484,
+								484
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 1,
+					"file": "js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3340,
+								3340
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1686.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1003,7 +1082,7 @@
 		"cols":
 		[
 			0.0,
-			0.479966200409,
+			0.395561765558,
 			1.0
 		],
 		"rows":

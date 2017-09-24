@@ -3,149 +3,42 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!-- Update 1.1 meta viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src='js/knockout-3.4.2.js'></script>
 </head>
 <body>
 	<div id="map">MAP</div>
 	<div id="list">
 		<h3>Sean Favourate</h3>
+		<p>Hint1:search and hit enter to filter list</p>
+		<p>Hint2:search select from dropdown to auto complete</p>
+		<p>Hint3:ESC key will close infowindow</p>
+
 <!-- Search bar and dropdown list -->
-		<input id="filter" class="inputbar" data-bind="{textInput:filter}" type="search" name="" placeholder="Search" oninput="showDropdown()" onblur="">
-		<div class="dropdown">
+<!-- Update 1.1 Removed all vanilla and JQuery event listeners-->
+		<input id="filter" class="inputbar" data-bind="{textInput:filter,hasFocus:searchHasFocus,event:{keypress:$root.onEnter}}" type="search" name="" placeholder="Search" onblur="">
+		<div class="dropdown" data-bind="visible:dropdownvisible">
 			  <div id="myDropdown" class="dropdown-content" data-bind="foreach:places">
-
-			    <a href="#" data-bind="text:name,visible:visible" onclick="setFilter(this.innerHTML)"></a>
-
+			    <a href="#" data-bind="text:name,visible:visible, click:ViewModel.setFilter"></a>
 			  </div>
 		</div>
 <!-- List View -->
 		<div data-bind="foreach:places">
-			<div id="" class="label" data-bind="text:$index()+1+'.' + name, attr: {id:$index()},visible:visible" onclick = "clickLabel(this)" onmouseover="overLabel(this)" onmouseleave="leaveLable(this)">
+			<div id="" class="label" data-bind="text:$index()+1+'.' + name, attr: {id:$index()},visible:visible,click:function(data,event){clickLabel(event,$index())}">
 			</div>
 		</div>
+
 	</div>
 <!-- Map -->
-	<div id="pano" class="pano"></div>
-<!-- Scripts -->
-	<script src='js/app.js' async defer></script>
-	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB7SJJaAkmrUYuGUurw8zSPB1lvEKG43cE&callback=initMap" async defer></script>
-	<script async defer>
-		var map = null;
-		var center = null, zoom = null;
-		var infos = [];
-
-// Error Handling: Download Google Map Library
-		var checkGoogleLibrary = setTimeout(function(){
-			if(!window.google)window.alert("Unable to connect to google, check network")
-		},5000)
-
-// Initiate Google Map
-		function initMap() {
-			map = new google.maps.Map(document.getElementById('map'), {
-				// zoom: 12,
-				// center: home,
-				scrollwheel: false,
-				streetViewControl:false,
-				mapTypeControl:false
-			});
-	// Dynamic zoom and center setting
-			ViewModel.makeMarkers(function(bounds){
-				map.fitBounds(bounds,50)
-			})
-
-			clearTimeout(checkGoogleLibrary)
-
-	// Delayed function: to wait for the map to initialize. 
-	// it seems there is no callback for map initialization.
-			setTimeout(function(){
-				center = map.getCenter()
-				zoom = map.getZoom()
-			},800)
-			
-	// Google maps auto completion not implemented
-	// Used custom search bar and dropdown list instead
-
-			// var input = document.getElementById("search")
-			// var autocomplete = new google.maps.places.Autocomplete(input);
-			// autocomplete.bindTo("bounds",map)
-
-	// Show all markers
-			ViewModel.markers.forEach(function(marker){
-				marker.setMap(map)
-			});
-		}
-
-// List item click action
-		function clickLabel(obj){
-			// confirm(obj.id)
-			var marker = ViewModel.markers[obj.id]
-			ViewModel.selectMarker(marker)
-			ViewModel.selectInfo(marker)
-			obj.className = "mouseclick"
-			setTimeout(function(){
-				obj.className = "lable mouseover"
-			},100)
-			marker.infowindow
-		}
-
-// List item mouse over action
-		function overLabel(obj){
-			var marker = ViewModel.markers[obj.id]
-			ViewModel.selectMarker(marker)
-			// console.log(obj.class)
-			obj.className = "label mouseover"
-		}
-// List item mouse leave action
-		function leaveLable(obj){
-			var marker = ViewModel.markers[obj.id]
-			marker.setAnimation(null)
-			obj.className = "label"
-		}
-
-// toggle between hiding and showing the dropdown content
-		function showDropdown() {
-			var filterinput = document.getElementById("filter").value
-			if(filterinput)document.getElementById("myDropdown").classList.toggle("show",true);
-			else document.getElementById("myDropdown").classList.toggle("show",false);
-		}
-
-// Close the dropdown menu if the user clicks outside of it
-	//	Block style Implementation
-		window.onclick = function(event) {
-		  if (!event.target.matches('.dropbtn')) {
-
-		    var dropdowns = document.getElementsByClassName("dropdown-content");
-		    var i;
-		    for (i = 0; i < dropdowns.length; i++) {
-		      var openDropdown = dropdowns[i];
-		      if (openDropdown.classList.contains('show')) {
-		        openDropdown.classList.remove('show');
-		      }
-		    }
-		  }
-		}
-	//	Passive style Implementation
-		// window.addEventListener(
-		// 	"click",
-		// 	function(event) {
-		// 		if (!event.target.matches('.dropbtn')) {
-		// 		    var dropdowns = document.getElementsByClassName("dropdown-content");
-		// 		    var i;
-		// 		    for (i = 0; i < dropdowns.length; i++) {
-		// 	  	      var openDropdown = dropdowns[i];
-		// 		      if (openDropdown.classList.contains('show')) {
-		// 		        openDropdown.classList.remove('show');
-		// 		      }
-		//     		}
-		//   		}
-		// 	},
-		// 	{passive:true}
-		// )
-
-// Set search bar value
-		function setFilter(filter){
-			document.getElementById("filter").value = filter
-		}
+<!-- 	<div id="pano" class="pano"></div>
+ --><!-- Scripts -->
+	<script type="text/javascript" src="js/data.js"></script>
+	<script src='js/app.js'></script>
+<!-- Error handling when google script could not be aquired. -->
+	<script onerror="alert('Google Maps could not be initialized')"src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB7SJJaAkmrUYuGUurw8zSPB1lvEKG43cE&callback=initMap" async defer></script>
+	<script>
 
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

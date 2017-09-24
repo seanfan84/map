@@ -16,7 +16,7 @@ you may need a recent internet browser installed, preferrablly Chrome/Safari.
 * Open the homepage.html with your browser
 
 ## Data
-* Data is stored in app.js
+* Data is stored in data.js
 
 ## How to navigate the page
 ### 1. Map View

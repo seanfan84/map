@@ -1,0 +1,116 @@
+//This text file stores some code that I deleted from this project, but I may need to refer to them for other projects
+
+
+	// function fourSquare(marker){
+	// 	var output;
+	// 	var timeout = setTimeout(function() {
+	// 		output = timeOutMessage;
+	// 	}, 3000);
+
+	// 	$.ajax({
+	// 		url:placeholder,
+	// 		dataType:"JSON",
+	// 		type:"GET",
+	// 		success:function(data){(
+	// 			clearTimeout(timeout)
+	// 			)}
+	// 	})
+
+	// 	output += "foursquare"
+	// 	return output
+	// }
+
+	// function nytimes(marker){
+	// 	var output;
+	// 	var timeout = setTimeout(function() {
+	// 		output = "Failed to get resources";
+	// 	}, 3000);
+
+	// 	$.ajax({
+	// 		url:placeholder,
+	// 		dataType:"JSON",
+	// 		type:"GET",
+	// 		success:function(data){(
+	// 			clearTimeout(timeout)
+	// 			)}
+	// 	});
+	// 	output += "ntyimes"
+	// 	return output		
+	// }
+
+
+// // Only restful API is implemented
+// function wiki(marker,callback){
+// 		// console.log("doing wiki")
+// 		var output;
+// 		var timeout = setTimeout(function() {
+// 			output = timeOutMessage;
+// 		}, 3000);
+// 		var wiki_url = "https://en.wikipedia.org/w/api.php";
+// 		$.ajax({
+// 			url: wiki_url,
+// 			data: {
+// 				"action": "opensearch",
+// 				"search": marker.title
+// 			},
+//   			crossDomain: true,
+// 			dataType: 'jsonfm',
+// 			type: 'GET',
+// 			headers: {
+// 				'Api-User-Agent': 'Example/1.0'
+// 			},
+// 			success: function(data) {
+// 	            // console.log(data);
+// 	            var items = [];
+// 	            for (i = 0; i < data[1].length; i++) {
+// 	                // console.log(data[1][i])
+// 	                // console.log(data[2][i])
+// 	                // console.log(data[3][i])
+// 	                items.push("<li class='article'>" +
+// 	                	"<a href='" + data[3][i] + "'>" +
+// 	                	data[1][i] +
+// 	                	"</a>" + "<p>" + data[2][i] + "</p>" +
+// 	                	"</li>");
+// 	            }
+// 	            clearTimeout(timeout);
+// 	            output = items.join("");
+// 	            // console.log(output);
+// 	            callback(output);
+// 	        }
+// 	    });
+// 	}
+
+function wiki_rest(marker,callback){
+		var output;
+		var wiki_restful = "https://en.wikipedia.org/api/rest_v1/page/summary/" + marker.title;
+		
+		$.ajax({
+			url: wiki_restful,
+			dataType:'json',
+			crossDomain:true,
+			// statusCode:{
+			// 	404:function(response){
+			// 		// console.log(response);
+			// 		output = "<font color='red'>The wikipedia resource you requested does not exist</font>";
+			// 		callback(output);
+			// 	}
+			// },
+			success: function(data) {
+	            // console.log(data);
+	            output = data.extract_html;
+	            // console.log(output);
+	            callback(output);
+	        },
+	        error:function(xhr,status,error){
+	        	// console.log(xhr.status + "|"+status + "-" +error)
+	            // clearTimeout(timeout);
+	            if(xhr.status === 404){
+	            	output = "<font color='red'>The wikipedia resource you requested does not exist</font>";
+	            }
+	            else{
+	            	output = timeOutMessage;
+	            }
+				callback(output);
+	        }
+	    });
+}
